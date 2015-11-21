@@ -1,6 +1,20 @@
 <h1>Liked photos</h1>
  <% current_user.liked_photos.each do |photo| %>
 
-      <li> <img src= "<%= photo.image %>"> </li>
 
+  <div class='row'>
+ <div class='col-md-8 col-md-offset-2'>
+<div class="panel panel-default">
+  <div class="panel-heading"><%= photo.user.username %> <%=time_ago_in_words(photo.created_at)%> ago</div>
+  <div class="panel-body">
+
+      <tr>
+      <td> <img src= "<%= photo.image %>" class=img-responsive> </td>
+ <td><%= photo.caption %></td>
+
+</tr>
+</div>
+</div>
+</div>
+</div>
       <% end %>
